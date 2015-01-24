@@ -76,3 +76,4 @@ now in cmd follow the path of project and run using command
 
 in any browser run project with "http:\\127.0.0.1:8000"
 
+To Update Database Run command :  "python manage.py syncdb"
