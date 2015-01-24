@@ -2,7 +2,7 @@
 
 K_twitter_app will enable users to login to their accounts and do some basic Twitter like operations,
 
-Functionalities of this App are:
+#Functionalities of this App are:
 
 1.signUp
 
@@ -22,15 +22,16 @@ Functionalities of this App are:
 
 9.Time ,tweet posted
 
-Step of installing SetUp in Ubuntu
+#Step of installing SetUp in Ubuntu
 
-step 1:python is already there in ubuntu.You have to install pip
+#step 1:
+python is already there in ubuntu.You have to install pip
 
 sudo apt-get install python-pip
 
 pip install -U pip
 
-Step 2: Install Django 
+#Step 2: Install Django 
 sudo apt-get install python-django
 
 now in terminal follow the path of project and run using command 
@@ -41,7 +42,7 @@ In any browser run project with "http:\\127.0.0.1:8000"
 
 
 
-Step of installing SetUp in Windows(7,8, or XP)
+#Step of installing SetUp in Windows(7,8, or XP)
 
 Step 1:Download python
 https://www.python.org/downloads/
