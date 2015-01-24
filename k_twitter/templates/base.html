@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet/less" href="{{ STATIC_URL }}style.less">
+    <script src="{{ STATIC_URL }}less.js"></script>
+</head>
+<body>
+    <header>
+        <div class="wrapper">
+            {% block login %}
+            <a href="/"> Home  </a>&nbsp  &nbsp  &nbsp  &nbsp  &nbsp 
+            <a href="/users/"> Public Profiles</a>&nbsp  &nbsp &nbsp &nbsp &nbsp 
+            <a href="/users/{{ username }}">My Profile</a>&nbsp  &nbsp &nbsp &nbsp &nbsp 
+            <a href="/k_twitters">Public tweets</a>
+            <form action="/logout">
+                <input type="submit" id="btnLogOut" value="Log Out">
+            </form>
+            {% endblock %}
+        </div>
+    </header>
+    <div id="content">
+        <div class="wrapper">
+            {% block flash %}
+            {% if auth_form.non_field_errors or user_form.non_field_errors or k_twitter_form.errors %}
+            <div class="flash error">
+                {{ auth_form.non_field_errors }}
+                {{ user_form.non_field_errors }}
+                {{ k_twitter_form.content.errors }}
+            </div>
+            {% endif %}
+            {% if notice %}
+            <div class="flash notice">
+                {{ notice }}
+            </div>
+            {% endif %}
+            {% endblock %}
+
+            {% block content %}
+
+            {% endblock %}
+        </div>
+    </div>
+    </body>
+</html>

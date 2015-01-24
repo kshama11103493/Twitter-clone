@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="panel right">
+        <h1>Tweet Now</h1>
+        <p>
+            <form action="/submit" method="post">
+            {% for field in k_twitter_form %}{% csrf_token %}
+            {{ field }}
+            {% endfor %}
+            <input type="hidden" value="{{ next_url }}" name="next_url">
+            <input type="submit" value="tweet">
+            </form>
+        </p>
+    </div>
+    <div class="panel left">
+        <h1>Public tweets</h1>
+        {% for k_twitter in k_twitters %}
+        <div class="k_twitterWrapper">
+                        <span class="name">{{ k_twitter.user.first_name }}</span>@{{ k_twitter.user.username }}
+            <span class="time">{{ k_twitter.creation_date|timesince }}</span>
+            <p>{{ k_twitter.content }}</p>
+        </div>
+        {% endfor %}
+    </div>
+{% endblock %}
